@@ -5,6 +5,11 @@ import { motion } from "framer-motion";
 import { Logo, LinkedinLogo, Blogger, Whats } from "@/public/logotipo";
 
 export default function Nav() {
+  const iconsVariants = {
+    scale: 1.25,
+    rotate: 360,
+  };
+
   return (
     <div
       id="Nav"
@@ -13,15 +18,16 @@ export default function Nav() {
       <div className="flex justify-start items-center w-full space-x-4 p-1 ml-2 pr-3">
         <Logo className="grow aspect-auto" width={30} />
 
-        <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
+        {/* BARRA DE ÍCONES NAV BAR */}
+        <motion.div whileHover={iconsVariants}>
           <Whats className="icon-home-nav" width={22} href={"#"} />
         </motion.div>
-        <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
+        <motion.div whileHover={iconsVariants}>
           <Blogger className="icon-home-nav" width={22} href={"#"} />
         </motion.div>
-        <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
+        <motion.div whileHover={iconsVariants}>
           <LinkedinLogo
-            className="icon-home-nav hover:px-2 cursor-pointer"
+            className="icon-home-nav"
             width={25}
             href={"https://www.linkedin.com/in/andpeicunha"}
           />
