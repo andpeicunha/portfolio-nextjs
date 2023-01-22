@@ -1,6 +1,6 @@
 import "./globals.css";
-import Link from "next/link";
 import Nav from "./navigator/page";
+import ParticleLogo from "./particles/particles";
 
 export default function RootLayout({
   children,
@@ -15,8 +15,9 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <Nav></Nav>
+        <Nav />
         {children}
+        <ParticleLogo />
       </body>
     </html>
   );
