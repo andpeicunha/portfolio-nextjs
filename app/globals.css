@@ -16,10 +16,25 @@
   }
   .icon-home-tecs {
     /* Icones das tecologias que uso */
-    @apply cursor-default opacity-40 m-[5px] mr-0 hover:opacity-100;
+    @apply cursor-crosshair opacity-40 m-[5px] mr-0 hover:opacity-100;
   }
 }
 
-body {
-  background-color: gray;
+/* body {
+  background-color: black !important;
+} */
+
+#tsparticles {
+  opacity: 0.5;
+}
+
+#img-home-1 {
+  background-image: url("/bg-home.jpg");
+}
+#img-home-2 {
+  background-image: url("/bg-home2.jpg");
+}
+
+abbr[title] {
+  text-decoration: unset;
 }

@@ -19,7 +19,7 @@ const ParticleLogo = () => {
     }, []);
 
     return (
-        <div className="absolute top-0 -z-50">
+        <div id="particles" className="absolute top-0 -z-10">
             <Particles
                 id="tsparticles"
                 init={particlesInit}
@@ -60,13 +60,13 @@ const ParticleLogo = () => {
                     },
                     particles: {
                         color: {
-                            value: "#272727",
+                            value: "#464646",
                         },
                         links: {
-                            color: "#272727",
+                            color: "#9c9c9c",
                             distance: 150,
                             enable: true,
-                            opacity: 0.5,
+                            opacity: 0.45,
                             width: 1,
                         },
                         collisions: {

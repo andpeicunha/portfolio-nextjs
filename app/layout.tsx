@@ -16,7 +16,7 @@ export default function RootLayout({
       <head />
       <body>
         <Nav />
-        <ParticleLogo />
+        {/* <ParticleLogo /> */}
         {children}
       </body>
     </html>

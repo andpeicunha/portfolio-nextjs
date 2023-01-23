@@ -9,6 +9,7 @@ import {
   IconJava,
   IconGit,
   IconReact,
+  IconTailwind,
 } from "../public/logotipo";
 import { motion } from "framer-motion";
 
@@ -18,18 +19,33 @@ export default function Home() {
   return (
     <>
       {/* CORPO HOME */}
-      <div id="Body" className="relative pt-8 pl-6 pr-20">
+
+      {/* IMAGEM ESTRELAS FUNDO */}
+      <div
+        id="img-home-1"
+        className="absolute -z-40 bg-black opacity-80 bg-clip-content bg-cover bg-center bg-fixed w-full h-full"
+      ></div>
+      <div
+        id="blur"
+        className="absolute -z-30 w-full h-full bg-black opacity-40 blur-sm"
+      ></div>
+      <div
+        id="img-home-2"
+        className="absolute -z-20 w-full h-full opacity-20 bg-clip-content bg-cover bg-center bg-fixed"
+      ></div>
+      <div id="Body" className="relative pt-8 pl-6 pr-28">
         <h1 className="titulo-3">Olá,</h1>
 
         <div id="Nome" className="relative">
           <div className="asolute titulo-3 mr-3">I&#39;m </div>
-          <div
+          <a
+            href="https://www.linkedin.com/in/andpeicunha"
             onMouseEnter={() => setMostraLogo(true)}
             onMouseLeave={() => setMostraLogo(false)}
-            className="absolute left-24 top-0 bottom-0 titulo-3 text-gray-700 font-bold cursor-pointer"
+            className="absolute left-24 top-0 bottom-0 titulo-3 text-cyan-500 font-bold cursor-pointer"
           >
             André,
-          </div>
+          </a>
           {mostraLogo && (
             <motion.div
               animate={{
@@ -88,16 +104,23 @@ export default function Home() {
             width={25}
             UrlPage={""}
           />
-          <IconGit
+          <IconTailwind
             className="icon-home-tecs"
             classNameSvg=""
-            width={27}
+            width={32}
             UrlPage={""}
+            abbr={"Tailwind"}
           />
           <IconReact
             className="icon-home-tecs"
             classNameSvg=""
             width={31}
+            UrlPage={""}
+          />
+          <IconGit
+            className="icon-home-tecs"
+            classNameSvg=""
+            width={29}
             UrlPage={""}
           />
         </div>
