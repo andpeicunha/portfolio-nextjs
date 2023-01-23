@@ -1,7 +1,15 @@
 //NAVEGAÇÃO
 "use client";
 import React, { useState } from "react";
-import { LinkedinLogo, IconHTML5, IconCSS3 } from "../public/logotipo";
+import {
+  LinkedinLogo,
+  IconHTML5,
+  IconCSS3,
+  IconTS,
+  IconJava,
+  IconGit,
+  IconReact,
+} from "../public/logotipo";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -54,18 +62,42 @@ export default function Home() {
         {/* ICONES TECNOLOGIAS HOME */}
         <div
           id="LogosTecnologias"
-          className="absolute top-5 right-2 flex-col"
+          className="absolute flex-col justify-center align-top top-4 right-6"
         >
           <IconHTML5
-            className="cursor-default my-5"
+            className="icon-home-tecs"
             classNameSvg=""
             width={25}
             UrlPage={""}
           />
           <IconCSS3
-            className="cursor-default my-5"
+            className="icon-home-tecs"
             classNameSvg=""
-            width={55}
+            width={33}
+            UrlPage={""}
+          />
+          <IconTS
+            className="icon-home-tecs"
+            classNameSvg=""
+            width={25}
+            UrlPage={""}
+          />
+          <IconJava
+            className="icon-home-tecs"
+            classNameSvg=""
+            width={25}
+            UrlPage={""}
+          />
+          <IconGit
+            className="icon-home-tecs"
+            classNameSvg=""
+            width={27}
+            UrlPage={""}
+          />
+          <IconReact
+            className="icon-home-tecs"
+            classNameSvg=""
+            width={31}
             UrlPage={""}
           />
         </div>
