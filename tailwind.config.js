@@ -11,16 +11,19 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        dynamicSm: "clamp(17px, 4vw, 22px)",
-        dynamicSm1: "clamp(23px, 6vw, 30px)",
-        dynamicMd: "clamp(10px, 8vw, 25px)",
-        dynamicLg: "clamp(40px, 7vw, 70px)",
+        corpo: "clamp(15px, 4vw, 25px)",
+        titulo0: "clamp(14px, 3vw, 30px)",
+        titulo1: "clamp(17px, 4vw, 25px)",
+        titulo2: "clamp(23px, 6vw, 36px)",
+        titulo3: "clamp(36px, 8vw, 78px)",
+        titulo4: "clamp(40px, 8vw, 78px)",
       },
       backgroundImage: {
         'foto-andre': "url('/photo-andre-site.png')",
       },
       colors: {
         'verde-ti-vivo': '#56DDC1',
+        'verde-ti-1': 'rgb(13, 238, 114)',
       },
     },
   },

@@ -27,15 +27,22 @@
 @tailwind utilities;
 
 @layer components {
+  .txt-corpo {
+    @apply text-corpo text-white;
+  }
+  .titulo-0 {
+    @apply text-titulo0 lg:text-titulo1  text-white;
+  }
   .titulo-1 {
-    @apply text-dynamicSm lg:text-dynamicSm1  text-white;
+    @apply text-titulo1 lg:text-titulo1  text-white;
   }
   .titulo-2 {
-    @apply text-dynamicMd text-white;
+    @apply text-titulo2 text-white;
   }
   .titulo-3 {
-    @apply text-dynamicLg text-white tracking-normal;
+    @apply text-titulo3 text-white tracking-normal;
   }
+
   .icon-home-nav {
     @apply flex-none aspect-auto blur-[1px] opacity-60 hover:blur-none hover:opacity-90 hover:px-0 cursor-pointer;
   }
@@ -47,9 +54,14 @@
     /* Icones das tecologias que uso */
     @apply w-full h-[24px] md:h-[25px] lg:md:h-[29px] aspect-auto pb-1 md:pb-0.5;
   }
+
+  .section-page-1 {
+    /* Icones das tecologias que uso */
+    @apply static min-h-screen max-h-full top-0 pt-14 pl-[5.2rem] pr-8;
+  }
   .section-page-2 {
     /* Icones das tecologias que uso */
-    @apply static min-h-screen max-h-full w-full pt-8 pl-24 pr-8
+    @apply static min-h-screen max-h-full w-full pt-0 pl-[5.2rem] pr-8
     titulo-1;
   }
 }
@@ -60,11 +72,13 @@ html {
 body {
   background-color: #0b192e !important;
 }
+p {
+  margin-top: 15px;
+}
 
 #tsparticles {
   opacity: 0.5;
 }
-
 #img-home-1 {
   background-image: url("/bg-home.jpg");
 }

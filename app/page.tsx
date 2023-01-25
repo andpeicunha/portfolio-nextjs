@@ -128,13 +128,10 @@ export default function Home() {
       </div>
 
       {/* TEXTO INÍCIO APRESENTAÇÃO */}
-      <section
-        id="page1"
-        className="static min-h-screen max-h-full top-0 pt-8 pl-24 pr-8"
-      >
-        <div className="titulo-3 pl-0 -mb-3">Olá,</div>
-        <div className="flex flex-row">
-          <div className="titulo-3 pl-0 pr-3">Sou o </div>
+      <section id="page1" className="section-page-1">
+        {/* Texto saudação */}
+        <div className="titulo-0 pl-0 -mb-3">Olá! Eu sou o </div>
+        <div className="flex flex-row mt-1">
           <div>
             <a
               href="https://www.linkedin.com/in/andpeicunha"
@@ -142,7 +139,7 @@ export default function Home() {
               onMouseLeave={() => setMostraLogo(false)}
               className="titulo-3 text-verde-ti-vivo font-bold cursor-pointer"
             >
-              André,
+              André Peixoto,
             </a>
           </div>
           {mostraLogo && (
@@ -156,25 +153,23 @@ export default function Home() {
             </motion.div>
           )}
         </div>
+        {/* H1 - Slogan */}
         <h1 className="titulo-2 mt-4 text-[gray]-300/60 hover:blur-none">
           Um criativo Front End Developer{" "}
           <span className="opacity-100">✌</span>
         </h1>
-
-        {/* FOTO ANDRE */}
-        {/* <div
-          id="foto-andre"
-          className="absolute top-5 left-[1.5rem] bg-foto-andre bg-cover h-[11rem] aspect-square rounded-xl"
-        ></div> */}
-
-        <h1 className="titulo-1 mt-8 text-gray-200/50 ">
-          Sou um desenvolvedor Front-End e adoro criar (e as vezes também
-          desenhar) experiências incríveis na internet. Gosto de projetos
-          desafiadores especilamente focados em UI.
+        {/* texto abertura */}
+        <h1 className="titulo-1 mt-8 text-gray-200/70 ">
+          Sou um desenvolvedor Front-End e{" "}
+          <span className="text-verde-ti-vivo">adoro criar experiências</span>{" "}
+          incríveis na internet. Gosto de projetos desafiadores especilamente
+          focado nos detalhes de UI.
+          <p />
+          Tenho 43 anos e mais de 15 em TI, e preciso te contar...
         </h1>
       </section>
 
-      <SectionPage2 />
+      <SectionPage2 numero="01" titulo="Sobre Mim" />
     </>
   );
 }
