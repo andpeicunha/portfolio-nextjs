@@ -8,7 +8,7 @@ type TituloPag = {
   titulo?: string;
 };
 
-export default function SectionPage2(props: TituloPag) {
+export default function SectionPageAbout(props: TituloPag) {
   const squareVariants = {
     visible: {
       opacity: 1,
@@ -31,7 +31,7 @@ export default function SectionPage2(props: TituloPag) {
       animate={controls}
       initial="hidden"
       variants={squareVariants}
-      className="section-page-2"
+      className="section-pages"
     >
       {/* titulo página */}
       <div className="mt-3">

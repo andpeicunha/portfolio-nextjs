@@ -1,8 +1,7 @@
 //NAVEGAÇÃO
 "use client";
-import React, { useState, useEffect } from "react";
-import { useAnimation, motion, Variants } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React, { useState } from "react";
+import { motion, Variants } from "framer-motion";
 
 import {
   LinkedinLogo,
@@ -17,7 +16,8 @@ import {
   IconAdobe,
 } from "../public/logotipo";
 import Nav from "./navigator/page";
-import SectionPage2 from "./about/page";
+import SectionPageAbout from "./about/page";
+import SectionPageWork from "./work/page";
 
 export default function Home() {
   const [mostraLogo, setMostraLogo] = useState(false);
@@ -159,17 +159,20 @@ export default function Home() {
           <span className="opacity-100">✌</span>
         </h1>
         {/* texto abertura */}
-        <h1 className="titulo-1 mt-8 text-gray-200/70 ">
+        <h1 className="text-1xl mt-8 text-gray-200/70 pr-0 sm:pr-[7rem] lg:pr-[20rem]">
           Sou um desenvolvedor Front-End e{" "}
           <span className="text-verde-ti-vivo">adoro criar experiências</span>{" "}
           incríveis na internet. Gosto de projetos desafiadores especilamente
           focado nos detalhes de UI.
           <p />
-          Tenho 43 anos e mais de 15 em TI, e preciso te contar...
+          Tenho <span className="text-verde-ti-vivo">mais de 15 em TI</span> e
+          pelo menos 7 anos com desenvolvimento Front End, mas quero te contar
+          uma coisa...
         </h1>
       </section>
 
-      <SectionPage2 numero="01" titulo="Sobre Mim" />
+      <SectionPageAbout numero="01" titulo="Sobre Mim" />
+      <SectionPageWork numero="02" titulo="Onde Trabalhei" />
     </>
   );
 }

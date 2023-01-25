@@ -14,7 +14,7 @@ module.exports = {
         corpo: "clamp(15px, 4vw, 25px)",
         titulo0: "clamp(14px, 3vw, 30px)",
         titulo1: "clamp(17px, 4vw, 25px)",
-        titulo2: "clamp(23px, 6vw, 36px)",
+        titulo2: "clamp(22px, 6vw, 32px)",
         titulo3: "clamp(36px, 8vw, 78px)",
         titulo4: "clamp(40px, 8vw, 78px)",
       },

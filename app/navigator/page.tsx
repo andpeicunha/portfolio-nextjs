@@ -2,7 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Logo, LinkedinLogo, Blogger, Whats } from "@/public/logotipo";
+import { Logo, LinkedinLogo } from "@/public/logotipo";
 
 export default function Nav() {
   const iconsVariants = {
@@ -16,7 +16,7 @@ export default function Nav() {
       className="absolute z-20 w-full h-[50px] top-0 bg-transparent py-2 pr-3 sm:pr-6"
     >
       <div className="flex justify-start items-center w-full p-1 ml-2 lg:ml-[1.20rem] pr-3">
-        <Logo className="grow aspect-auto pl-3" width={30} />
+        <Logo className="grow aspect-auto pl-3 lg:pl-1.5" width={30} />
 
         {/* BARRA DE ÍCONES NAV BAR */}
         <motion.div whileHover={iconsVariants}>
