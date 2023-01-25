@@ -27,7 +27,7 @@ const ParticleLogo = () => {
                 options={{
                     background: {
                         color: {
-                            value: "#000",
+                            value: "#0B192E",
                         },
                     },
                     fpsLimit: 120,

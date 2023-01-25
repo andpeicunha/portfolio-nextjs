@@ -1,6 +1,9 @@
 //NAVEGAÇÃO
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAnimation, motion, Variants } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 import {
   LinkedinLogo,
   IconHTML5,
@@ -10,131 +13,168 @@ import {
   IconGit,
   IconReact,
   IconTailwind,
+  IconFigma,
+  IconAdobe,
 } from "../public/logotipo";
-import { motion } from "framer-motion";
+import Nav from "./navigator/page";
+import SectionPage2 from "./about/page";
 
 export default function Home() {
   const [mostraLogo, setMostraLogo] = useState(false);
 
+  const iconsVariants: Variants = {
+    animate: {
+      x: 0,
+      opacity: 1,
+    },
+    transition: {},
+    initial: { opacity: 0 },
+    exit: { opacity: 0 },
+  };
+
   return (
     <>
-      {/* CORPO HOME */}
-
       {/* IMAGEM ESTRELAS FUNDO */}
       <div
         id="img-home-1"
-        className="absolute -z-40 bg-black opacity-80 bg-clip-content bg-cover bg-center bg-fixed w-full h-full"
+        className="fixed -z-40 bg-black opacity-20 bg-clip-content bg-cover bg-center bg-fixed w-full h-full"
       ></div>
-      <div
-        id="blur"
-        className="absolute -z-30 w-full h-full bg-black opacity-40 blur-sm"
-      ></div>
-      <div
-        id="img-home-2"
-        className="absolute -z-20 w-full h-full opacity-20 bg-clip-content bg-cover bg-center bg-fixed"
-      ></div>
-      <div id="Body" className="relative pt-8 pl-6 pr-28">
-        <h1 className="titulo-3">Olá,</h1>
 
-        <div id="Nome" className="relative">
-          <div className="asolute titulo-3 mr-3">I&#39;m </div>
-          <a
-            href="https://www.linkedin.com/in/andpeicunha"
-            onMouseEnter={() => setMostraLogo(true)}
-            onMouseLeave={() => setMostraLogo(false)}
-            className="absolute left-24 top-0 bottom-0 titulo-3 text-cyan-500 font-bold cursor-pointer"
-          >
-            André,
-          </a>
-          {mostraLogo && (
-            <motion.div
-              animate={{
-                x: 0,
-                opacity: 1,
-              }}
-              // transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 0.5 }}
-              transition={{
-                delay: 0,
-                x: { duration: 2 },
-                default: { ease: "easeIn" },
-              }}
-              initial={{ opacity: 0 }}
-              exit={{ opacity: 0 }}
+      {/* BARRA SUPERIOR */}
+      <Nav />
+
+      {/* ÍCONES TECNOLOGIAS */}
+      <div
+        id="LogosTecnologias"
+        className="fixed flex flex-col h-full top-0 bottom-0 left-3.5 lg:left-4 pt-16"
+      >
+        {/* ÍCONES */}
+        <div className="icon-home-tecs">
+          <IconHTML5
+            classNameSvg="icon-home-svg"
+            width={0}
+            UrlPage={""}
+            texto={"HTML5"}
+          />
+        </div>
+        <div className="icon-home-tecs">
+          <IconCSS3
+            classNameSvg="icon-home-svg"
+            width={0}
+            UrlPage={""}
+            texto={"CSS3"}
+          />
+        </div>
+        <div className="icon-home-tecs">
+          <IconTailwind
+            classNameSvg="icon-home-svg"
+            width={0}
+            UrlPage={""}
+            texto={"Tailwind"}
+          />
+        </div>
+        <div className="icon-home-tecs">
+          <IconJava
+            classNameSvg="icon-home-svg"
+            width={0}
+            UrlPage={""}
+            texto={"ES6+"}
+          />
+        </div>
+        <div className="icon-home-tecs">
+          <IconTS
+            classNameSvg="icon-home-svg"
+            width={0}
+            UrlPage={""}
+            texto={"TS"}
+          />
+        </div>
+        <div className="icon-home-tecs">
+          <IconReact
+            classNameSvg="icon-home-svg"
+            width={0}
+            UrlPage={""}
+            texto={"ReactJS"}
+          />
+        </div>
+        <div className="icon-home-tecs">
+          <IconGit
+            classNameSvg="icon-home-svg"
+            width={0}
+            UrlPage={""}
+            texto={"Git"}
+          />
+        </div>
+        <div className="icon-home-tecs">
+          <IconFigma
+            classNameSvg="icon-home-svg"
+            width={0}
+            UrlPage={""}
+            texto={"Figma"}
+          />
+        </div>
+        <div className="icon-home-tecs">
+          <IconAdobe
+            classNameSvg="icon-home-svg"
+            width={0}
+            UrlPage={""}
+            texto={"Adobe Cloud"}
+          />
+        </div>
+        <div
+          id="Linha"
+          className="ml-[25px] mt-6 h-full w-[1px] bg-white/50"
+        ></div>
+      </div>
+
+      {/* TEXTO INÍCIO APRESENTAÇÃO */}
+      <section
+        id="page1"
+        className="static min-h-screen max-h-full top-0 pt-8 pl-24 pr-8"
+      >
+        <div className="titulo-3 pl-0 -mb-3">Olá,</div>
+        <div className="flex flex-row">
+          <div className="titulo-3 pl-0 pr-3">Sou o </div>
+          <div>
+            <a
+              href="https://www.linkedin.com/in/andpeicunha"
+              onMouseEnter={() => setMostraLogo(true)}
+              onMouseLeave={() => setMostraLogo(false)}
+              className="titulo-3 text-verde-ti-vivo font-bold cursor-pointer"
             >
+              André,
+            </a>
+          </div>
+          {mostraLogo && (
+            <motion.div variants={iconsVariants}>
               <LinkedinLogo
-                className="absolute left-[272px] top-[0px] bottom-0 "
-                classNameSvg="h-[15px] "
-                width={25}
+                className=""
+                classNameSvg="h-[15px]"
+                width={15}
                 UrlPage={"https://www.linkedin.com/in/andpeicunha"}
               />
             </motion.div>
           )}
         </div>
-
-        <h1 className="titulo-2 text-2xl mt-4 text-gray-600/80 hover:blur-none">
-          Um criativo Front End Developer ✌
+        <h1 className="titulo-2 mt-4 text-[gray]-300/60 hover:blur-none">
+          Um criativo Front End Developer{" "}
+          <span className="opacity-100">✌</span>
         </h1>
 
-        {/* ICONES TECNOLOGIAS HOME */}
-        <div
-          id="LogosTecnologias"
-          className="absolute flex-col justify-center align-top top-4 right-6"
-        >
-          <IconHTML5
-            className="icon-home-tecs"
-            classNameSvg=""
-            width={25}
-            UrlPage={""}
-          />
-          <IconCSS3
-            className="icon-home-tecs"
-            classNameSvg=""
-            width={33}
-            UrlPage={""}
-          />
-          <IconTS
-            className="icon-home-tecs"
-            classNameSvg=""
-            width={25}
-            UrlPage={""}
-          />
-          <IconJava
-            className="icon-home-tecs"
-            classNameSvg=""
-            width={25}
-            UrlPage={""}
-          />
-          <IconTailwind
-            className="icon-home-tecs"
-            classNameSvg=""
-            width={32}
-            UrlPage={""}
-            abbr={"Tailwind"}
-          />
-          <IconReact
-            className="icon-home-tecs"
-            classNameSvg=""
-            width={31}
-            UrlPage={""}
-          />
-          <IconGit
-            className="icon-home-tecs"
-            classNameSvg=""
-            width={29}
-            UrlPage={""}
-          />
-        </div>
+        {/* FOTO ANDRE */}
+        {/* <div
+          id="foto-andre"
+          className="absolute top-5 left-[1.5rem] bg-foto-andre bg-cover h-[11rem] aspect-square rounded-xl"
+        ></div> */}
 
-        <h1 className="titulo-2 text-xl mt-3 text-gray-200/50 ">
-          Sou natural de São Paulo, e minha história com TI começou cedo, mas
-          não exatamente como programador.
-          <p className="h-3" /> Meu primeiro trabalho na área, aos 16 anos, foi
-          como design na gráfica de um tio. Na época ele não queria, mas eu
-          estava estudando Design e Publicidade na ETEC e queria trabalhar. Pra
-          ele aceitar eu tive de levar o computador de casa e ele pagava apenas
-          a condução, assim começei.
+        <h1 className="titulo-1 mt-8 text-gray-200/50 ">
+          Sou um desenvolvedor Front-End e adoro criar (e as vezes também
+          desenhar) experiências incríveis na internet. Gosto de projetos
+          desafiadores especilamente focados em UI.
         </h1>
-      </div>
+      </section>
+
+      <SectionPage2 />
     </>
   );
 }

@@ -1,5 +1,4 @@
 import "./globals.css";
-import Nav from "./navigator/page";
 import ParticleLogo from "./particles/particles";
 
 export default function RootLayout({
@@ -14,8 +13,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
-        <Nav />
+      <body className="h-full">
         {/* <ParticleLogo /> */}
         {children}
       </body>
