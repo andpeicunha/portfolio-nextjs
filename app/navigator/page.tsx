@@ -4,11 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Logo, LinkedinLogo } from "@/public/logotipo";
 
-type NavProps = {
+interface NavProps {
   className?: string;
-};
+}
 
-export default function Nav(props: NavProps) {
+const Nav: React.FC<NavProps> = (props) => {
   const iconsVariants = {
     scale: 1.25,
     rotate: 360,
@@ -30,4 +30,6 @@ export default function Nav(props: NavProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Nav;
