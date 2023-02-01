@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { Job } from "../component/jobs";
 import TituloPaginas from "../component/tituloPage";
 
-export function SectionPageWork() {
+function SectionPageWork(props: { params?: any; searchParams?: any }) {
   const squareVariants = {
     visible: {
       opacity: 1,
@@ -119,3 +119,5 @@ export function SectionPageWork() {
     </motion.div>
   );
 }
+
+export default SectionPageWork;

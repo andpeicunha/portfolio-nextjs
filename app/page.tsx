@@ -16,7 +16,7 @@ import {
 } from "../public/logotipo";
 import Nav from "./navigator/page";
 import SectionPageAbout from "./about/page";
-import { SectionPageWork } from "./work/page";
+import SectionPageWork from "./work/page";
 
 export default function Home() {
   const [mostraLogo, setMostraLogo] = useState(false);
