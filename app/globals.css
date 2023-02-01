@@ -47,14 +47,12 @@
     @apply flex-none aspect-auto blur-[1px] opacity-60 hover:blur-none hover:opacity-90 hover:px-0 cursor-pointer;
   }
   .icon-home-tecs {
-    /* Icones das tecologias que uso */
     @apply opacity-30 hover:opacity-90
     mt-3 md:mt-3 lg:mt-4
     justify-center 
     text-white text-[9px] text-center;
   }
   .icon-home-svg {
-    /* Icones das tecologias que uso */
     @apply w-full
     h-[24px] md:h-[25px] lg:md:h-[26px]
     pb-1 md:pb-0.5 lg:pb-0.5
@@ -62,18 +60,23 @@
   }
 
   .section-page-1 {
-    /* Icones das tecologias que uso */
-    @apply static min-h-screen max-h-full
-    top-0
+    @apply static min-h-screen max-h-full top-0
     pt-14 lg:pt-24 xl:pt-32
-    pl-[5.2rem] sm:pl-[6.5rem] lg:pl-[8rem] xl:pl-[12rem]
+    pl-[5.2rem] sm:pl-[6.5rem] md:pl-[8rem] lg:pl-[8rem] xl:pl-[12rem]
     pr-8;
   }
   .section-pages {
-    /* Icones das tecologias que uso */
-    @apply static min-h-screen max-h-full w-full 
-    pt-0 pl-[5.2rem] pr-8
-    titulo-1;
+    @apply static min-h-screen max-h-full top-0
+    pt-12 lg:pt-14 xl:pt-20
+    pb-10 lg:pb-20 xl:pb-28
+    pl-[5.2rem] sm:pl-[6.5rem] lg:pl-[8rem] xl:pl-[12rem]
+    pr-8;
+  }
+  .hidden {
+    @apply opacity-20 transition-opacity duration-1000 ease-out;
+  }
+  .div-navigation {
+    @apply fixed z-40 w-full h-[50px] top-0 bg-transparent py-2 pr-3 sm:pr-6;
   }
 }
 

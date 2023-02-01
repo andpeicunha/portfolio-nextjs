@@ -2,13 +2,9 @@
 import React, { useEffect } from "react";
 import { useAnimation, motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import TituloPaginas from "../component/tituloPage";
 
-type TituloPag = {
-  numero?: string;
-  titulo?: string;
-};
-
-export default function SectionPageAbout(props: TituloPag) {
+export default function SectionPageAbout() {
   const squareVariants = {
     visible: {
       opacity: 1,
@@ -31,55 +27,57 @@ export default function SectionPageAbout(props: TituloPag) {
       animate={controls}
       initial="hidden"
       variants={squareVariants}
-      className="section-pages"
+      className=" section-pages 
+      md:grid md:grid-cols-2"
     >
-      {/* titulo página */}
-      <div className="mt-3">
-        <span className="text-verde-ti-1 font-mono text-titulo2">
-          {props.numero}:
-        </span>
-        <span className="text-sky-700 font-bold text-titulo2">{" {"}</span>
-        <span className="text-titulo2">{props.titulo}</span>
-        <span className="text-sky-700 font-bold text-titulo2">{"}"}</span>
-      </div>
+      <TituloPaginas id="SECTION 1 - ABOUT" numero="01" titulo="Sobre Mim" />
 
       {/* texto corpo */}
-      <div className="txt-corpo text-gray-200/70 mt-6">
+      <div
+        className=" text-[0.9rem] text-gray-200/70 pr-0 
+        sm:pr-[7rem] 
+        md:text-[0.90rem] md:pr-[0rem] md:h-auto
+        lg:text-[0.95rem]
+        xl:text-[1.1rem]"
+      >
         Aos 16 anos começei estagiando como{" "}
-        <span className="text-verde-ti-vivo">Design Gráfico</span>. Logo tive
-        uma oportunidade numa outra gráfica, mas ainda achava aquilo um tanto
-        chato, era tudo muito estático, eu{" "}
+        <span className="text-verde-ti-vivo">Design Gráfico</span>, logo tive
+        novas oportunidades, mas continuava me sentindo deslocado, era tudo
+        muito <b>estático</b>. Eu realmente{" "}
         <span className="text-verde-ti-vivo">
-          curtia apenas do processo de criação.
-        </span>
+          curtia o processo de criação,
+        </span>{" "}
+        mas design gráfico não me motivava.
         <p />
-        Porém um cliente, que gostava do meu trabalho, me fez uma proposta. Me
-        lembro claramente da ligação e do convite, foi emocionante, aquilo era
-        novo e pareceu promissor - eu seria um{" "}
-        <span className="text-verde-ti-vivo">Web Design</span> - foi alí que
-        descobri uma paixão!
+        Num dia, já trabalhando numa gráfica em São Caetano do Sul, um cliente
+        fez uma proposta. Me lembro claramente da ligação e do convite, foi
+        emocionante - aquilo era novo e promissor - eu seria um{" "}
+        <span className="text-verde-ti-vivo">Web Design</span>... foi alí que
+        descobri <span className="text-verde-ti-vivo">uma paixão</span>!
         <p />
-        Passei alguns anos trabalhando como Web Design na{" "}
-        <span className="text-verde-ti-vivo">Base Brasil</span> e em 2002 tive
-        uma oportunidade no{" "}
-        <span className="text-verde-ti-vivo">Grupo Store</span>... alí eu teria
-        meu primeiro contato com desenvolvimento Front-End.
+        Passei{" "}
+        <span className="text-verde-ti-vivo">
+          longos anos trabalhando com Front-End
+        </span>{" "}
+        e naturalmente a carreira foi evoluindo para novos e mais complexos
+        desafios.
         <p />
-        Inicialmente me especializei em{" "}
-        <span className="text-verde-ti-vivo">Design IU/UX</span> e naturalmente
-        veio o desenvolvimento{" "}
-        <span className="text-verde-ti-vivo">Front-End</span> na medida que os
-        sistemas também foram migrando pra web.
         <p />
         Aqui na lateral você pode ver algumas tecnologias, frameworks e sistemas
         que trabalho.
       </div>
 
       {/* FOTO ANDRE */}
-      <div className="flex w-full pt-5 justify-center align-bottom">
+      <div
+        className=" top-0 flex h-full w-full py-5 justify-center items-center
+        md:grid md:left-[10rem] md:items-start md:pt-0"
+      >
         <div
           id="foto-andre"
-          className="h-[11rem] bg-foto-andre bg-cover aspect-square rounded-xl"
+          className="grayscale hover:grayscale-0 
+          bg-foto-andre bg-cover aspect-square rounded-xl h-[11rem] 
+          md:h-[13rem] md:drop-shadow-md
+          lg:h-[16rem]"
         ></div>
       </div>
     </motion.div>
