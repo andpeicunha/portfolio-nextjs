@@ -8,7 +8,7 @@ type NavProps = {
   className?: string;
 };
 
-export function Nav(props: NavProps) {
+export default function Nav(props: NavProps) {
   const iconsVariants = {
     scale: 1.25,
     rotate: 360,
@@ -27,16 +27,6 @@ export function Nav(props: NavProps) {
             href={"https://www.linkedin.com/in/andpeicunha"}
           />
         </motion.div>
-      </div>
-    </div>
-  );
-}
-
-export function NavMini(props: NavProps) {
-  return (
-    <div id="NavMini">
-      <div className="invisible flex justify-start items-center w-full p-1 ml-2 lg:ml-[1.20rem] pr-3">
-        Mini
       </div>
     </div>
   );

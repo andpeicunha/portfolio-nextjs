@@ -14,7 +14,7 @@ import {
   IconFigma,
   IconAdobe,
 } from "../public/logotipo";
-import { Nav } from "./navigator/page";
+import Nav from "./navigator/page";
 import SectionPageAbout from "./about/page";
 import { SectionPageWork } from "./work/page";
 
@@ -58,16 +58,6 @@ export default function Home() {
       >
         <Nav />
       </motion.div>
-      {/* 
-      <motion.div
-        className="div-navigation"
-        initial={{ opacity: 1 }}
-        animate={{ opacity: hidden ? 1 : 0 }}
-        transition={{ duration: 0.15 }}
-      >
-        <NavMini />
-      </motion.div> 
-      */}
 
       {/* ÍCONES TECNOLOGIAS */}
       <div
