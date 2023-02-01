@@ -14,7 +14,7 @@ import {
   IconFigma,
   IconAdobe,
 } from "../public/logotipo";
-import { Nav, NavMini } from "./navigator/page";
+import { Nav } from "./navigator/page";
 import SectionPageAbout from "./about/page";
 import { SectionPageWork } from "./work/page";
 
