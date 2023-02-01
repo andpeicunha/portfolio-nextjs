@@ -1,5 +1,6 @@
 //NAVEGAÇÃO
 "use client";
+import React from "react";
 import { motion } from "framer-motion";
 import { Logo, LinkedinLogo } from "@/public/logotipo";
 
