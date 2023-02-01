@@ -8,7 +8,10 @@ interface NavProps {
   className?: string;
 }
 
-const Nav: React.FC<NavProps> = (props) => {
+function Nav(props: { className?: any; params?: any; searchParams?: any }) {
+  // const { params, searchParams } = props;
+  // const Nav: React.FC<NavProps> = (props) => {
+
   const iconsVariants = {
     scale: 1.25,
     rotate: 360,
@@ -30,6 +33,6 @@ const Nav: React.FC<NavProps> = (props) => {
       </div>
     </div>
   );
-};
+}
 
 export default Nav;
