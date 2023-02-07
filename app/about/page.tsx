@@ -30,7 +30,11 @@ export default function SectionPageAbout() {
       className=" section-pages 
       md:grid md:grid-cols-2"
     >
-      <TituloPaginas id="SECTION 1 - ABOUT" numero="01" titulo="Sobre Mim" />
+      <TituloPaginas
+        id="SECTION 1 - ABOUT"
+        numero="01"
+        titulo="História Profissional"
+      />
 
       {/* texto corpo */}
       <div

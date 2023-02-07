@@ -1,7 +1,7 @@
 //NAVEGAÇÃO
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, AnimatePresence } from "framer-motion";
 import {
   LinkedinLogo,
   IconHTML5,
@@ -35,12 +35,22 @@ export default function Home() {
   // DIV NAV HIDDEN SCROLL DOWN COM FRAMER MOTION
   const [hidden, setHidden] = useState(false);
   function handleScroll() {
-    if (window.pageYOffset > 100) {
+    if (window.pageYOffset > 50) {
       setHidden(true);
+      console.log("true");
     } else {
       setHidden(false);
+      console.log("false");
     }
   }
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {/* IMAGEM ESTRELAS FUNDO */}
@@ -50,99 +60,131 @@ export default function Home() {
       ></div>
 
       {/* BARRA SUPERIOR */}
-      <motion.div
-        className="div-navigation"
-        initial={{ opacity: 1 }}
-        animate={{ opacity: hidden ? 0 : 1 }}
-        transition={{ duration: 0.15 }}
-      >
-        <Nav />
-      </motion.div>
 
-      {/* ÍCONES TECNOLOGIAS */}
-      <div
-        id="LogosTecnologias"
-        className="fixed top-0 flex-col h-screen 
-        w-[35px] left-[5%] md:left-[4%] lg:left-[1.9rem] pt-28"
+      <AnimatePresence>
+        {/* Not Hidden */}
+        {!hidden && (
+          <motion.div
+            className="div-navigation"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.15 }}
+            exit={{ opacity: 0 }}
+          >
+            <Nav />
+          </motion.div>
+        )}
+
+        {/* Hidden */}
+        {hidden && (
+          <motion.div
+            className="div-navigation"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.15 }}
+            exit={{ opacity: 0 }}
+          >
+            {/* //TODO: criar um menu suspenso quando rolar a página*/}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ANIMAÇÃO QUANDO INICIA A TELA, ATRASO EM SEGUNDOS PARA MOSTRAR A BARRA DE ÍCONES */}
+      <motion.div
+        initial={{
+          opacity: 0,
+          x: -100,
+          scale: 1,
+        }}
+        animate={{ opacity: 1, x: 0, scale: 1 }}
+        transition={{ delay: 1, duration: 1 }}
       >
-        {/* ÍCONES */}
-        <div className="icon-home-tecs">
-          <IconHTML5
-            classNameSvg="icon-home-svg"
-            width={0}
-            UrlPage={""}
-            texto={"HTML5"}
-          />
-        </div>
-        <div className="icon-home-tecs">
-          <IconCSS3
-            classNameSvg="icon-home-svg"
-            width={0}
-            UrlPage={""}
-            texto={"CSS3"}
-          />
-        </div>
-        <div className="icon-home-tecs">
-          <IconTailwind
-            classNameSvg="icon-home-svg"
-            width={0}
-            UrlPage={""}
-            texto={"Tailwind"}
-          />
-        </div>
-        <div className="icon-home-tecs">
-          <IconJava
-            classNameSvg="icon-home-svg"
-            width={0}
-            UrlPage={""}
-            texto={"ES6+"}
-          />
-        </div>
-        <div className="icon-home-tecs">
-          <IconTS
-            classNameSvg="icon-home-svg"
-            width={0}
-            UrlPage={""}
-            texto={"Typescript"}
-          />
-        </div>
-        <div className="icon-home-tecs">
-          <IconReact
-            classNameSvg="icon-home-svg"
-            width={0}
-            UrlPage={""}
-            texto={"ReactJS"}
-          />
-        </div>
-        <div className="icon-home-tecs">
-          <IconGit
-            classNameSvg="icon-home-svg"
-            width={0}
-            UrlPage={""}
-            texto={"Git"}
-          />
-        </div>
-        <div className="icon-home-tecs">
-          <IconFigma
-            classNameSvg="icon-home-svg"
-            width={0}
-            UrlPage={""}
-            texto={"Figma"}
-          />
-        </div>
-        <div className="icon-home-tecs">
-          <IconAdobe
-            classNameSvg="icon-home-svg"
-            width={0}
-            UrlPage={""}
-            texto={"Adobe Cloud (Photoshop, Illustrator, Premiere)"}
-          />
-        </div>
+        {/* ÍCONES TECNOLOGIAS */}
         <div
-          id="Linha"
-          className="ml-[50%] mt-6 h-full w-[1px] bg-white/50"
-        ></div>
-      </div>
+          id="LogosTecnologias"
+          className="fixed pt-[6rem] top-0 flex-col h-screen 
+        w-[40px] left-[5%] md:left-[4%] lg:left-[1.9rem]"
+        >
+          {/* ÍCONES */}
+          <div className="icon-home-tecs">
+            {/* CSS referente a div do SVG */}
+            <IconHTML5
+              classNameSvg="icon-home-svg"
+              width={0}
+              UrlPage={""}
+              texto={"HTML5"}
+            />
+          </div>
+          <div className="icon-home-tecs">
+            <IconCSS3
+              classNameSvg="icon-home-svg"
+              width={0}
+              UrlPage={""}
+              texto={"CSS3"}
+            />
+          </div>
+          <div className="icon-home-tecs">
+            <IconTailwind
+              classNameSvg="icon-home-svg"
+              width={0}
+              UrlPage={""}
+              texto={"Tailwind"}
+            />
+          </div>
+          <div className="icon-home-tecs">
+            <IconJava
+              classNameSvg="icon-home-svg"
+              width={0}
+              UrlPage={""}
+              texto={"ES6+"}
+            />
+          </div>
+          <div className="icon-home-tecs">
+            <IconTS
+              classNameSvg="icon-home-svg"
+              width={0}
+              UrlPage={""}
+              texto={"Typescript"}
+            />
+          </div>
+          <div className="icon-home-tecs">
+            <IconReact
+              classNameSvg="icon-home-svg"
+              width={0}
+              UrlPage={""}
+              texto={"ReactJS"}
+            />
+          </div>
+          <div className="icon-home-tecs">
+            <IconGit
+              classNameSvg="icon-home-svg"
+              width={0}
+              UrlPage={""}
+              texto={"Git"}
+            />
+          </div>
+          <div className="icon-home-tecs">
+            <IconFigma
+              classNameSvg="icon-home-svg"
+              width={0}
+              UrlPage={""}
+              texto={"Figma"}
+            />
+          </div>
+          <div className="icon-home-tecs">
+            <IconAdobe
+              classNameSvg="icon-home-svg"
+              width={0}
+              UrlPage={""}
+              texto={"Adobe Cloud (Photoshop, Illustrator, Premiere)"}
+            />
+          </div>
+          <div
+            id="Linha"
+            className="ml-[50%] mt-5 h-full w-[1px] bg-white/50"
+          ></div>
+        </div>
+      </motion.div>
 
       {/* TEXTO INÍCIO APRESENTAÇÃO */}
       <section id="page1" className="section-page-1">
@@ -190,21 +232,18 @@ export default function Home() {
         >
           Adoro{" "}
           <span className="text-verde-ti-vivo">
-            criar experiências incríveis
+            criar experiências inovadoras
           </span>{" "}
-          na internet. Estudo, trabalho e acredito em interfaces intuitivas e
-          modernas.
+          na web. Investigo, colaboro e acredito em interfaces elegantes,
+          intuitivas e modernas.
           <p />
-          São <span className="text-verde-ti-vivo">
-            mais de 15 anos em TI
+          Sou apaixonado por fotografia, design e <span>
+            novas tecnologias
           </span>{" "}
-          em mútiplos projetos, dos mais diferentes segmentos e empresas, mais
-          de 7 anos com{" "}
-          <span className="text-verde-ti-vivo">desenvolvimento Front-End</span>,
-          essa é a minha{" "}
-          <span className="text-verde-ti-vivo font-bold">
-            verdadeira paixão.
-          </span>
+          Front-End.
+          <p />
+          São <span>mais de 7 anos</span> em desenvolvimento Front-End e cerca
+          de 2 anos com React e NextJs.
         </h1>
       </section>
 

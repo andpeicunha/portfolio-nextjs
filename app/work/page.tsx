@@ -4,6 +4,7 @@ import { useAnimation, motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Job } from "../component/jobs";
 import TituloPaginas from "../component/tituloPage";
+import { IconPDF } from "@/public/logotipo";
 
 function SectionPageWork(props: { params?: any; searchParams?: any }) {
   const squareVariants = {
@@ -44,9 +45,9 @@ function SectionPageWork(props: { params?: any; searchParams?: any }) {
         nomeEmpresa="Base Brasil"
         periodo="1998 a 2002"
         funcao="Web Designer"
-        descricao="Esse foi minha <span class='text-verde-ti-vivo'>primeira experiência profissional com a internet</span>. 
+        descricao="Esse foi minha <span>primeira experiência profissional com a internet</span>. 
         Inicialmente era responsável pelo tratamento de imagens para sites em diversos projetos e clientes. 
-        <p/>Com cerca de 6 meses começei a <span class='text-verde-ti-vivo'>desenvolver para <b>Front-End</b></span>, 
+        <p/>Com cerca de 6 meses começei a <span>desenvolver para <b>Front-End</b></span>, 
         mas na época apenas com HTML e Javascript - <i class='font-serif'>acredite, o CSS mal era compatível com o IE.</i>"
         habilidades={["HTML", "Javascript", "Photoshop", "Corel Draw"]}
       />
