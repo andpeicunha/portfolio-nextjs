@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
@@ -78,7 +79,7 @@ const Blog: React.FC = () => {
           data.map((artc) => (
             <div
               key={artc.id}
-              className="pt-2 bg-gradient-to-b from-sky-900 rounded-lg ml-0 m-3 pt-0 p-6"
+              className="pt-2 bg-gradient-to-b from-sky-900 rounded-lg ml-0 m-3 p-6"
             >
               <a href={artc.url}>
                 <div className="text-white font-bold text-xl pb-2">
