@@ -17,6 +17,7 @@ import {
 import Nav from "./navigator/page";
 import SectionPageAbout from "./about/page";
 import SectionPageWork from "./work/page";
+import Blog from "./blog/page";
 
 export default function Home() {
   const [mostraLogo, setMostraLogo] = useState(false);
@@ -59,37 +60,29 @@ export default function Home() {
         className="fixed -z-40 bg-black opacity-20 bg-clip-content bg-cover bg-center bg-fixed w-full h-full"
       ></div>
 
-      {/* BARRA SUPERIOR */}
-
+      {/* 
+      BARRA SUPERIOR
+      FUNÇÃO EM JS PARA ESCONDER A BARRA DE NAVEGAÇÃO QUANDO ROLAR A PÁGINA
+      */}
       <AnimatePresence>
         {/* Not Hidden */}
         {!hidden && (
           <motion.div
             className="div-navigation"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.15 }}
+            initial={{ opacity: 1, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
             exit={{ opacity: 0 }}
           >
             <Nav />
           </motion.div>
         )}
-
-        {/* Hidden */}
-        {hidden && (
-          <motion.div
-            className="div-navigation"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.15 }}
-            exit={{ opacity: 0 }}
-          >
-            {/* //TODO: criar um menu suspenso quando rolar a página*/}
-          </motion.div>
-        )}
       </AnimatePresence>
 
-      {/* ANIMAÇÃO QUANDO INICIA A TELA, ATRASO EM SEGUNDOS PARA MOSTRAR A BARRA DE ÍCONES */}
+      {/*
+      ANIMAÇÃO BARRA LATERAL COM OS LOGOS 
+      ATRASO EM SEGUNDOS PARA MOSTRAR A BARRA DE ÍCONES 
+      */}
       <motion.div
         initial={{
           opacity: 0,
@@ -97,7 +90,7 @@ export default function Home() {
           scale: 1,
         }}
         animate={{ opacity: 1, x: 0, scale: 1 }}
-        transition={{ delay: 1, duration: 1 }}
+        transition={{ delay: 0.5, duration: 0.3 }}
       >
         {/* ÍCONES TECNOLOGIAS */}
         <div
@@ -249,6 +242,7 @@ export default function Home() {
 
       <SectionPageAbout />
       <SectionPageWork />
+      <Blog />
     </>
   );
 }

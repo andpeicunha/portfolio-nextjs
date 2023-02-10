@@ -2,6 +2,7 @@ type TituloPag = {
   numero?: string;
   titulo?: string;
   id?: string;
+  className?: string;
 };
 
 export default function TituloPaginas(props: TituloPag) {

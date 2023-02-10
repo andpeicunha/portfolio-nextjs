@@ -27,6 +27,7 @@ export const Job = ({
     <div className="txt-corpo text-gray-200/70 mt-2 mb-9 md:mr-3 md:pr-4 xl:mt-[-1.5rem]">
       <ul>
         {/* JOB 1 */}
+        {/* NOME DA EMPRESA */}
         <li
           className="text-verde-ti-vivo font-bold text-xl mb-[0.2rem] mt-2 
         md:text-[1.4rem] md:mb-[0.3rem]
@@ -34,24 +35,45 @@ export const Job = ({
         >
           {props.nomeEmpresa}
         </li>
+        {/* FUNÇÃO DESEMPENHADA */}
         <li
           className="text-md font-bold 
         md:text-[1.05rem] mb-[0.15rem]
         xl:text-[1.25rem]"
         >
-          <span className="text-[0.7rem] mr-[3px]">●</span>
           {props.funcao}
         </li>
-        <li className="text-xs xl:text-[0.85rem]">{props.periodo}</li>
+        <li className="mb-2 text-xs xl:text-[0.85rem]">{props.periodo}</li>
+      </ul>
+      {/* TECNOLOGIAS / STACKS */}
+      <span className="text-[0.9rem] font-light xl:text-[1.1rem]">
+        <b>Principais Stacks</b>
+      </span>
+      <div className="grid gap-2 grid-cols-2 mb-4">
+        {habilidades.map((habilidades) => (
+          <div
+            key={habilidades}
+            className="flex text-xs lg:text-[0.9rem] xl:text-[1rem] lg:py-[0.2rem] lg:opacity-60"
+          >
+            <span className="text-sm mt-[-3px] mr-[5px]">» </span>
+            {habilidades}
+          </div>
+        ))}
+      </div>
+
+      <ul>
         <li
           className="text-sm mt-[0.4rem]
           xl:text-[1.05rem] xl:leading-5"
           dangerouslySetInnerHTML={{ __html: descricao }}
         />
 
-        {/* JOB 2 */}
+        {/* 
+        JOB 2 
+        MOSTRA A SEGUNDA FUNÇÃO DENTRO DA MESMA EMRPESA
+        */}
         <li
-          className="text-md font-bold 
+          className="text-md font-bold mt-4 
         md:text-[1.05rem] mb-[0.15rem]
         xl:text-[1.25rem] xl:mt-6"
         >
@@ -74,22 +96,6 @@ export const Job = ({
           dangerouslySetInnerHTML={{ __html: descricao2 }}
         />
       </ul>
-      <span className="text-[1rem] font-light xl:text-[1.1rem]">
-        <b>Tecnologias</b>
-      </span>
-
-      {/* TECNOLOGIAS */}
-      <div className="grid gap-2 grid-cols-3">
-        {habilidades.map((habilidades) => (
-          <div
-            key={habilidades}
-            className="flex text-xs lg:text-[0.9rem] xl:text-[1rem] lg:py-[0.2rem] lg:opacity-60"
-          >
-            <span className="text-sm mt-[-3px] mr-[5px]">» </span>
-            {habilidades}
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

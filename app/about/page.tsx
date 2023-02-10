@@ -73,16 +73,37 @@ export default function SectionPageAbout() {
 
       {/* FOTO ANDRE */}
       <div
-        className=" top-0 flex h-full w-full py-5 justify-center items-center
+        className="flex-col top-0 flex h-full w-full py-5 justify-center items-center
         md:grid md:left-[10rem] md:items-start md:pt-0"
       >
         <div
           id="foto-andre"
-          className="grayscale hover:grayscale-0 
+          className="mb-5 grayscale hover:grayscale-0 
           bg-foto-andre bg-cover aspect-square rounded-xl h-[11rem] 
           md:h-[13rem] md:drop-shadow-md
           lg:h-[16rem]"
         ></div>
+        <a
+          href="@/public/cv-frontend.pdf"
+          download
+          className="flex justify-center w-full md:mt-[-8rem] lg:mt-[-5rem]"
+        >
+          <button
+            className="grid grid-flow-col gap-1 md:w-full justify-center align-middle bg-blue-300/20 hover:bg-blue-700 text-white font-bold py-2
+            px-4 rounded-md shadow-md hover:shadow-lg"
+          >
+            <svg
+              className="col-span-1 mt-[0.2rem] fill-current w-4 h-4 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+            <span className="col-span-3 text-white text-[14px] md:text-[15px] font-normal">
+              Baixar Currículo
+            </span>
+          </button>
+        </a>
       </div>
     </motion.div>
   );
