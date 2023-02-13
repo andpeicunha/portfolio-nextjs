@@ -20,6 +20,7 @@ import SectionPageWork from "./work/page";
 import Blog from "./blog/page";
 
 export default function Home() {
+  // State que mostra o logo do Lindekin quando o usuário passa o mouse sobre o nome Andre Peixoto
   const [mostraLogo, setMostraLogo] = useState(false);
 
   // FRAMER MOTION ICON SECTION TOP

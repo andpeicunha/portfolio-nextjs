@@ -1,5 +1,4 @@
 import "./globals.css";
-import ParticleLogo from "./particles/particles";
 
 export default function RootLayout({
   children,

@@ -84,7 +84,7 @@ export default function SectionPageAbout() {
           lg:h-[16rem]"
         ></div>
         <a
-          href="@/public/cv-frontend.pdf"
+          href="./cv-frontend.pdf"
           download
           className="flex justify-center w-full md:mt-[-8rem] lg:mt-[-5rem]"
         >
@@ -100,7 +100,7 @@ export default function SectionPageAbout() {
               <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
             </svg>
             <span className="col-span-3 text-white text-[14px] md:text-[15px] font-normal">
-              Baixar Currículo
+              Ver Currículo
             </span>
           </button>
         </a>
