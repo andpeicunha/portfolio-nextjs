@@ -87,8 +87,8 @@ export default function SectionPageAbout() {
         >
           <Image
             src={FotoAndreLinkedin}
-            width={800}
-            height={800}
+            width={256}
+            height={256}
             alt="Foto André Peixoto - Linkedin"
           />
         </div>
