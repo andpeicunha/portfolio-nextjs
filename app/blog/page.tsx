@@ -6,10 +6,9 @@ import axios from "axios";
 import TituloPaginas from "../component/tituloPage";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import useConvertedDate from "../component/convertDate";
+import Link from "next/link";
 
-// ANIMAÇÃO FRAMER MOTION QUANDO A SECTION É CARREGADA
-const squareVariants = {
+const variaveisAnimacaoMostraSection = {
   visible: {
     opacity: 1,
     scale: 1,
@@ -41,7 +40,6 @@ const Blog: React.FC = () => {
   const [data, setData] = useState<Array<Article> | null>(null);
   const [error, setError] = useState<Error | null>(null);
 
-  // chamada do axios para pegar os dados da API dev.to
   useEffect(() => {
     axios
       .get("https://dev.to/api/articles?username=andpeicunha")
@@ -66,15 +64,15 @@ const Blog: React.FC = () => {
       ref={ref}
       animate={controls}
       initial="hidden"
-      variants={squareVariants}
+      variants={variaveisAnimacaoMostraSection}
       className="section-pages
-      md:grid md:grid-cols-2"
+      md:grid"
     >
       {/* titulo página */}
       <TituloPaginas id="SECTION 3 - Artigos" numero="03" titulo="Artigos" />
 
       {error ? <p>Error: {error.message}</p> : null}
-      <div className="grid md:grid-cols-2">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3">
         {data ? (
           data.map((artc) => (
             <div
@@ -93,7 +91,27 @@ const Blog: React.FC = () => {
                   alt="André Peixoto | Front End Developer"
                   className="rounded-full w-10 h-10"
                 />
-                <span></span>
+                <Link
+                  href={artc.url}
+                  id="buttonLerArtigoCompleto"
+                  title="Ler Artigo Completo"
+                  className="cursor-pointers flex w-[38px] p-[0.5rem] mt-[-2.5rem] ml-[3.5rem] bg-blue-600/50 rounded-full text-white outline-none focus:ring-4 shadow-lg transform active:scale-90 transition-transform"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M4 5.5h5a2 2 0 0 1 2 2v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1Zm10 14c-.35 0-.687-.06-1-.17v.17a1 1 0 1 1-2 0v-.17c-.313.11-.65.17-1 .17H4a3 3 0 0 1-3-3v-10a3 3 0 0 1 3-3h5a3.99 3.99 0 0 1 3 1.354A3.99 3.99 0 0 1 15 3.5h5a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-6Zm-1-12v9a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-10a1 1 0 0 0-1-1h-5a2 2 0 0 0-2 2Zm-8 0h4v2H5v-2Zm10 0h4v2h-4v-2Zm4 3h-4v2h4v-2Zm-14 0h4v2H5v-2Zm14 3h-4v2h4v-2Zm-14 0h4v2H5v-2Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </Link>
               </div>
             </div>
           ))

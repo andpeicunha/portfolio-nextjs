@@ -1,6 +1,6 @@
 //NAVEGAÇÃO
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 import {
   LinkedinLogo,
@@ -18,10 +18,11 @@ import Nav from "./navigator/page";
 import SectionPageAbout from "./about/page";
 import SectionPageWork from "./work/page";
 import Blog from "./blog/page";
+import Image from "next/image";
+import MaoBalancando from "../public/victory-hand.png";
 
 export default function Home() {
-  // State que mostra o logo do Lindekin quando o usuário passa o mouse sobre o nome Andre Peixoto
-  const [mostraLogo, setMostraLogo] = useState(false);
+  const [mostraLogoLinkedin, setMostraLogoLinkedin] = useState(false);
 
   // FRAMER MOTION ICON SECTION TOP
   const iconsVariants: Variants = {
@@ -93,7 +94,6 @@ export default function Home() {
         animate={{ opacity: 1, x: 0, scale: 1 }}
         transition={{ delay: 0.5, duration: 0.3 }}
       >
-        {/* ÍCONES TECNOLOGIAS */}
         <div
           id="LogosTecnologias"
           className="fixed pt-[6rem] top-0 flex-col h-screen 
@@ -187,8 +187,15 @@ export default function Home() {
           <div className="">Olá!</div>
           <div
             className="relative w-[24px] md:w-[27px]  aspect-square
-          top-[-23px] md:top-[-32px] left-[28px] md:left-[45px]  bg-[url('/victory-hand.png')] bg-cover"
-          />
+          top-[-23px] md:top-[-32px] left-[28px] md:left-[45px] bg-cover"
+          >
+            <Image
+              src={MaoBalancando}
+              height={24}
+              width={24}
+              alt="mão da vitória"
+            />
+          </div>
           <div className="relative mt-[-25px] md:text-[1.1rem]">Eu sou o </div>
         </div>
 
@@ -196,14 +203,14 @@ export default function Home() {
           <div>
             <a
               href="https://www.linkedin.com/in/andpeicunha"
-              onMouseEnter={() => setMostraLogo(true)}
-              onMouseLeave={() => setMostraLogo(false)}
+              onMouseEnter={() => setMostraLogoLinkedin(true)}
+              onMouseLeave={() => setMostraLogoLinkedin(false)}
               className="titulo-3 text-verde-ti-vivo font-bold cursor-pointer"
             >
               André Peixoto,
             </a>
           </div>
-          {mostraLogo && (
+          {mostraLogoLinkedin && (
             <motion.div variants={iconsVariants}>
               <LinkedinLogo
                 className=""
@@ -214,12 +221,10 @@ export default function Home() {
             </motion.div>
           )}
         </div>
-        {/* H1 - Slogan */}
         <div className="flex titulo-2 mt-2 text-[gray]-300/60 hover:blur-none items-baseline">
           Um apaixonado Front-End Developer
         </div>
 
-        {/* TEXTO ABERTURA PAG 1 */}
         <h1
           className="text-1xl mt-8 text-gray-200/70 pr-0 
         sm:pr-[7rem] lg:pr-[20rem] xl:text-[1.3rem]"
@@ -239,6 +244,9 @@ export default function Home() {
           São <span>mais de 7 anos</span> em desenvolvimento Front-End e cerca
           de 2 anos com React e NextJs.
         </h1>
+        <div className="fixed top-0 right-0 bg-white/50 w-[5rem] h-[5rem] invisible">
+          Ultimo Artigo
+        </div>
       </section>
 
       <SectionPageAbout />
