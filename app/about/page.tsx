@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import { useAnimation, motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import TituloPaginas from "../component/tituloPage";
+import Image from "next/image";
+import FotoAndreLinkedin from "@/public/photo-andre-site.png";
 
 export default function SectionPageAbout() {
   const squareVariants = {
@@ -79,10 +81,17 @@ export default function SectionPageAbout() {
         <div
           id="foto-andre"
           className="mb-5 grayscale hover:grayscale-0 
-          bg-foto-andre bg-cover aspect-square rounded-xl h-[11rem] 
+          bg-cover aspect-square rounded-xl h-[11rem] 
           md:h-[13rem] md:drop-shadow-md
           lg:h-[16rem]"
-        ></div>
+        >
+          <Image
+            src={FotoAndreLinkedin}
+            width={800}
+            height={800}
+            alt="Foto André Peixoto - Linkedin"
+          />
+        </div>
         <a
           href="./cv-frontend.pdf"
           download
