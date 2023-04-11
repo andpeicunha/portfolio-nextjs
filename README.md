@@ -1,16 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Projeto desenvolvido em NextJs com Typescript.
+
+integração com API Rest da Dev.to para consulta dos artigos publicados no site.
+
+Uso da biblioteca Tailwind com design responsivo 
 
 ## Getting Started
 
 First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
