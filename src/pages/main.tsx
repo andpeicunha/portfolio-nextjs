@@ -13,7 +13,7 @@ import SectionPageWork from '../components/work/workXP';
 import { Articles } from '../components/articles/articles';
 import MaoBalancando from '../images/victory-hand.png';
 
-export function Home() {
+export default function Home() {
   const [mostraLogoLinkedin, setMostraLogoLinkedin] = useState(false);
   const [language] = useState('ptBR');
   const yearNow = new Date().getFullYear();
