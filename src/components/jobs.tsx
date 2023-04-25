@@ -44,7 +44,6 @@ export const Job = ({
       <span className="text-[0.9rem] font-light xl:text-[1.1rem]">
         <b>Principais Stacks</b>
       </span>
-      
       <div className="grid gap-2 grid-cols-2 mb-4">
         {habilidades.map((item) => (
           <div

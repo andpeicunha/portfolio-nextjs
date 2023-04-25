@@ -160,7 +160,7 @@ export function Home() {
           Front-End.
           <p />
           São <span>mais de 7 anos</span> em desenvolvimento Front-End e cerca
-          de 2 anos com React e NextJs.
+          de <span>4 anos</span> com React e NextJs.
         </h1>
       </section>
 
