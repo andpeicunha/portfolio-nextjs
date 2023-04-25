@@ -16,8 +16,8 @@ import MaoBalancando from '../images/victory-hand.png';
 export function Home() {
   const [mostraLogoLinkedin, setMostraLogoLinkedin] = useState(false);
   const [language, setLanguage] = useState('ptBR');
-  let yearNow = new Date().getFullYear();
-  let yearsReact = yearNow - 2019;
+  const yearNow = new Date().getFullYear();
+  const yearsReact = yearNow - 2019;
 
   const iconsVariants: Variants = {
     animate: {
