@@ -1,4 +1,6 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* SCROLLBAR */
 /* Firefox */
@@ -22,9 +24,6 @@
   border-radius: 14px;
   border: 1px solid var(--primary);
 }
-
-@tailwind components;
-@tailwind utilities;
 
 @layer components {
   .txt-corpo {
@@ -85,9 +84,6 @@
   }
 }
 
-html {
-}
-
 body {
   background-color: #0b192e !important;
 }
@@ -99,8 +95,8 @@ p {
   opacity: 0.5;
 }
 #img-home-1 {
-  background-image: url("/bg-home.jpg");
+  background-image: url('../images/bg-home.jpg');
 }
 #img-home-2 {
-  background-image: url("/bg-home2.jpg");
+  background-image: url('../images/bg-home2.jpg');
 }

@@ -1,4 +1,4 @@
-import GlobalTags from "./globalTags";
+import GlobalTags from "./___globalTags";
 
 export default function Head() {
   return (

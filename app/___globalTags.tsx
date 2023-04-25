@@ -1,3 +1,10 @@
+import React from 'react';
+
+/**
+ * Generates meta tags and a link tag for the favicon.
+ *
+ * @return {JSX.Element} A React fragment containing the meta and link tags.
+ */
 export default function GlobalTags() {
   return (
     <>
