@@ -102,7 +102,7 @@ const Img = styled(Image)`
 export const ImageLogo = ({ ...props }: PropsImageLogo) => {
   return (
     <DivImgContainer>
-      <Img src={props.src} alt="Logo" width={256} height={256} />
+      <Img src={props.src} alt="Logo" width={256} height={256} priority />
       <TextInfo className="textInfo">{props.texto}</TextInfo>
     </DivImgContainer>
   );

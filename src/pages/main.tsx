@@ -16,8 +16,9 @@ import MaoBalancando from '../images/victory-hand.png';
 export function Home() {
   const [mostraLogoLinkedin, setMostraLogoLinkedin] = useState(false);
   const [language, setLanguage] = useState('ptBR');
+  let yearNow = new Date().getFullYear();
+  let yearsReact = yearNow - 2019;
 
-  // FRAMER MOTION ICON SECTION TOP
   const iconsVariants: Variants = {
     animate: {
       x: 0,
@@ -28,7 +29,6 @@ export function Home() {
     exit: { opacity: 0 },
   };
 
-  // DIV NAV HIDDEN SCROLL DOWN COM FRAMER MOTION
   const [hidden, setHidden] = useState(false);
   function handleScroll() {
     if (window.pageYOffset > 50) {
@@ -160,7 +160,7 @@ export function Home() {
           Front-End.
           <p />
           São <span>mais de 7 anos</span> em desenvolvimento Front-End e cerca
-          de <span>4 anos</span> com React e NextJs.
+          de <span>{yearsReact} anos</span> com React e NextJs.
         </h1>
       </section>
 
