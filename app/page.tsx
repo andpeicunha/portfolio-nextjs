@@ -16,7 +16,7 @@ import {
 } from '../public/logotipo'
 import Nav from './navigator/page'
 import SectionPageAbout from './about/page'
-import SectionPageWork from './work/page'
+import SectionPageWork from './jobs/page'
 import Blog from './blog/page'
 import Image from 'next/image'
 import MaoBalancando from '../public/victory-hand.png'
@@ -38,10 +38,8 @@ export default function Home() {
 	function handleScroll() {
 		if (window.pageYOffset > 50) {
 			setHidden(true)
-			console.log('true')
 		} else {
 			setHidden(false)
-			console.log('false')
 		}
 	}
 	useEffect(() => {
