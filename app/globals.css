@@ -1,4 +1,6 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* SCROLLBAR */
 /* Firefox */
@@ -23,9 +25,6 @@
   border: 1px solid var(--primary);
 }
 
-@tailwind components;
-@tailwind utilities;
-
 @layer components {
   .txt-corpo {
     @apply text-corpo text-white;
@@ -41,10 +40,6 @@
   }
   .titulo-3 {
     @apply text-titulo3 text-white tracking-normal;
-  }
-  /* usado para mudar a cor do texto e dar destaque em partes específicas */
-  span {
-    @apply text-verde-ti-vivo font-bold;
   }
   .icon-home-nav {
     @apply flex-none aspect-auto blur-[1px] opacity-60 hover:blur-none hover:opacity-90 hover:px-0 cursor-pointer;
@@ -85,15 +80,21 @@
   }
 }
 
-html {
-}
+@layer base {
+  span {
+    @apply text-verde-ti-vivo font-bold;
+  }
+  
+  body {
+   @apply bg-[#0b192e] ;
+  }
+  
+  p {
+    @apply mt-1
+  }
+} 
 
-body {
-  background-color: #0b192e !important;
-}
-p {
-  margin-top: 15px;
-}
+
 
 #tsparticles {
   opacity: 0.5;

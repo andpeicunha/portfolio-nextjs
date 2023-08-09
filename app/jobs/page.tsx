@@ -6,7 +6,7 @@ import { Job } from '../component/jobs'
 import TituloPaginas from '../component/tituloPage'
 
 import { JobsList } from './jobsList'
-import { reverseOrder } from '../util/inverteOrdem/page'
+import { reverseOrder } from '../util/functions/reverseOrder'
 
 function SectionPageWork() {
 	const controls = useAnimation()

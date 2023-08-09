@@ -15,7 +15,7 @@ type MyProps = {
 	descricao2?: string
 }
 
-// export function Job(props: Job) {
+//TODO: REFATORAR COMPONENTE
 export const Job = ({
 	descricao = '',
 	descricao1 = '',
