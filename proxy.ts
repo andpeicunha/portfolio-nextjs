@@ -5,6 +5,7 @@ import { isLocale } from './app/[lang]/content'
 export function proxy(request: NextRequest) {
 	const firstSegment = request.nextUrl.pathname.split('/')[1]
 
+	if (firstSegment === 'herdr-comment') return NextResponse.next()
 	if (isLocale(firstSegment)) return NextResponse.next()
 
 	request.nextUrl.pathname = `/en${request.nextUrl.pathname}`
